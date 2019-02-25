@@ -19,8 +19,6 @@ class App extends Component {
     }).then(response => response.json()).then(posts => {
       this.setState({posts:posts})
     })
-
-
   }
   
   render() {
@@ -58,20 +56,6 @@ class App extends Component {
         sortable: false,
         filterable: false
       },
-      {
-        Header: "Actions",
-        Cell: props => {
-          return (
-            <button>Delete</button>
-          )
-        },
-        sortable: false,
-        filterable: false,
-        width: 100,
-        maxWidth: 100,
-        minWidth: 100
-      }
-
     ]
     return (
       <ReactTable columns={columns}
