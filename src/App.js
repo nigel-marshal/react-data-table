@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './App.css';
 import ReactTable from "react-table";
 import "react-table/react-table.css";
 
@@ -7,11 +6,13 @@ class App extends Component {
 
   constructor(props){
     super(props);
+    //Initial data from API
     this.state = {
       posts: []
     }
   }
 
+  //Using react lifecycle hook to load in API response
   componentDidMount(){
     const url = "http://jsonplaceholder.typicode.com/posts";
     fetch(url, {
@@ -21,6 +22,7 @@ class App extends Component {
     })
   }
   
+  //Setting up column and context for react table
   render() {
     const columns = [
       {
